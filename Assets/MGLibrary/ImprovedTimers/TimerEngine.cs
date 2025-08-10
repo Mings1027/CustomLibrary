@@ -21,7 +21,7 @@ namespace MGLibrary.ImprovedTimers
             }
 
             PlayerLoop.SetPlayerLoop(currentPlayerLoop);
-            PlayerLoopUtils.PrintPlayerLoop("Time Engine" ,currentPlayerLoop);
+            PlayerLoopUtils.PrintPlayerLoop("Time Engine", currentPlayerLoop);
 
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.playModeStateChanged -= OnPlayModeState;
@@ -57,6 +57,7 @@ namespace MGLibrary.ImprovedTimers
             return PlayerLoopUtils.InsertSystem<T>(ref loop, in _timerSystem, index);
         }
     }
+
     public static class PlayerLoopUtils
     {
         // Remove a system from the player loop

@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using MGLibrary.CustomTween;
-using UnityEngine;
 
 namespace MGLibrary.ImprovedTimers
 {
@@ -29,36 +26,5 @@ namespace MGLibrary.ImprovedTimers
         }
 
         public static void Clear() => timers.Clear();
-
-        public static Func<float, float> GetEaseFunction(EaseType type)
-        {
-            return type switch
-            {
-                EaseType.Linear => t => t,
-                EaseType.InQuad => t => t * t,
-                EaseType.OutQuad => t => t * (2f - t),
-                EaseType.InOutQuad => t => t < 0.5f ? 2f * t * t : -1f + (4f - 2f * t) * t,
-                EaseType.InCubic => t => t * t * t,
-                EaseType.OutCubic => t => (t - 1f) * (t - 1f) * (t - 1f) + 1f,
-                EaseType.InOutCubic => t => t < 0.5f ? 4f * t * t * t : (t - 1f) * (2f * t - 2f) * (2f * t - 2f) + 1f,
-                EaseType.InQuart => t => t * t * t * t,
-                EaseType.OutQuart => t => 1f - Mathf.Pow(t - 1f, 4f),
-                EaseType.InOutQuart => t => t < 0.5f ? 8f * Mathf.Pow(t, 4f) : 1f - 8f * Mathf.Pow(t - 1f, 4f),
-                EaseType.InSine => t => 1f - Mathf.Cos(t * Mathf.PI / 2f),
-                EaseType.OutSine => t => Mathf.Sin(t * Mathf.PI / 2f),
-                EaseType.InOutSine => t => -(Mathf.Cos(Mathf.PI * t) - 1f) / 2f,
-                EaseType.InExpo => t => Mathf.Approximately(t, 0f) ? 0f : Mathf.Pow(2f, 10f * (t - 1f)),
-                EaseType.OutExpo => t => Mathf.Approximately(t, 1f) ? 1f : 1f - Mathf.Pow(2f, -10f * t),
-                EaseType.InOutExpo => t =>
-                {
-                    if (Mathf.Approximately(t, 0f)) return 0f;
-                    if (Mathf.Approximately(t, 1f)) return 1f;
-                    return t < 0.5f
-                        ? Mathf.Pow(2f, 20f * t - 10f) / 2f
-                        : (2f - Mathf.Pow(2f, -20f * t + 10f)) / 2f;
-                },
-                _ => t => t
-            };
-        }
     }
 }

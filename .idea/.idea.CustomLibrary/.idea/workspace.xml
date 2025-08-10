@@ -6,15 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="af2ce47a-ed2b-4bee-afd7-91fd34b0756f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CustomLibrary/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CustomLibrary/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/GlobalRegistry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MGLibrary/Scripts/GlobalRegistry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/GlobalRegistry.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MGLibrary/Scripts/GlobalRegistry.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/LogPrinter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MGLibrary/Scripts/LogPrinter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/LogPrinter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MGLibrary/Scripts/LogPrinter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MGLibrary/Scripts/Singleton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/Singleton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MGLibrary/Scripts/Singleton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/EaseType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/EaseType.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/Timer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/TimerEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/TimerEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/TimerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/TimerManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,11 +22,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/Desktop/GeminiCli/DisplayFPS.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/29089dc1f5ef4ceebf8781dd594e81ab9e3e00/0b/1b10258f/TagManagerInspector.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/29089dc1f5ef4ceebf8781dd594e81ab9e3e00/5f/05a30629/TagManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/29089dc1f5ef4ceebf8781dd594e81ab9e3e00/69/4f8f3ef8/ProjectSettingsBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7a50a6dc2cf74997b344c424092c6cf81ea400/5e/c19378dc/GameObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7a50a6dc2cf74997b344c424092c6cf81ea400/78/fba2e121/RenderingLayerMask.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7a50a6dc2cf74997b344c424092c6cf81ea400/81/7a4cf80d/PlayerLoop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7a50a6dc2cf74997b344c424092c6cf81ea400/95/bcd0cfdc/TagHandle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7a50a6dc2cf74997b344c424092c6cf81ea400/e9/a88b1eba/Component.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTweenPro/DoSequenceAnimation.cs" root0="FORCE_HIGHLIGHTING" />
@@ -59,6 +58,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CodeInspectionSettingsId&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -126,6 +126,9 @@
       <workItem from="1752046527876" duration="1887000" />
       <workItem from="1752586268400" duration="1350000" />
       <workItem from="1752734830886" duration="772000" />
+      <workItem from="1754665665649" duration="2775000" />
+      <workItem from="1754715203490" duration="7443000" />
+      <workItem from="1754819310973" duration="509000" />
     </task>
     <servers />
   </component>
@@ -159,5 +162,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
