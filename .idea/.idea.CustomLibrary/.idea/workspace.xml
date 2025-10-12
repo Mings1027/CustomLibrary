@@ -6,12 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="af2ce47a-ed2b-4bee-afd7-91fd34b0756f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CustomLibrary/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CustomLibrary/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/EaseType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/EaseType.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/Timer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/TimerEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/TimerEngine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/TimerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MGLibrary/ImprovedTimers/TimerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTweenPro/DoSequenceAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTweenPro/DoSequenceAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenPreviewManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenPreviewManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTweenPro/Editor/DoSequenceAnimationInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTweenPro/Editor/DoSequenceAnimationInspector.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +35,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7a50a6dc2cf74997b344c424092c6cf81ea400/81/7a4cf80d/PlayerLoop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7a50a6dc2cf74997b344c424092c6cf81ea400/95/bcd0cfdc/TagHandle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7a50a6dc2cf74997b344c424092c6cf81ea400/e9/a88b1eba/Component.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f6083ebbe45944d79ff3178e25ed4ffe4000/1f/fbf729b0/ABSAnimationComponent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTweenPro/DoSequenceAnimation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTweenPro/Editor/DoSequenceAnimationInspector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@821b8547a8a5/Runtime/Data/UniversalRenderPipelineAsset.cs" root0="SKIP_HIGHLIGHTING" />
@@ -64,7 +69,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Unity/UnityEditor/6000.1.6f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Unity/UnityEditor/6000.2.7f2/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -75,7 +80,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Unity/UnityEditor/6000.1.6f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Unity/UnityEditor/6000.2.7f2/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -129,6 +134,12 @@
       <workItem from="1754665665649" duration="2775000" />
       <workItem from="1754715203490" duration="7443000" />
       <workItem from="1754819310973" duration="509000" />
+      <workItem from="1755221079978" duration="4000" />
+      <workItem from="1755221096181" duration="6000" />
+      <workItem from="1755221253775" duration="12000" />
+      <workItem from="1755221288883" duration="2632000" />
+      <workItem from="1756357102149" duration="1715000" />
+      <workItem from="1760273963642" duration="5703000" />
     </task>
     <servers />
   </component>

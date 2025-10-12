@@ -208,13 +208,12 @@ namespace DG.DOTweenEditor
             {
                 int playingTweens = 0;
                 int completedTweens = 0;
-                int pausedTweens = 0;
                 foreach (KeyValuePair<DoSequenceAnimation, SequenceInfo> kvp in _AnimationToSequence)
                 {
                     Tween t = kvp.Value.sequence;
+                    if (t == null) continue;
                     if (t.IsPlaying()) playingTweens++;
                     else if (t.IsComplete()) completedTweens++;
-                    else pausedTweens++;
                 }
 
                 GUILayout.Label("Playing Tweens: " + playingTweens, Styles.previewStatusLabel);
@@ -295,11 +294,18 @@ namespace DG.DOTweenEditor
 
         static void AddAnimationToGlobalPreview(DoSequenceAnimation src)
         {
+            Debug.Log("1");
             if (!src.isActive) return;
+            Debug.Log("2");
             if (_previewOnlyIfSetToAutoPlay && !src.autoPlay) return;
+            Debug.Log("3");
             
             var s = src.CreateEditorPreview();
+            Debug.Log("4");
+            
             if (s == null) return;
+            Debug.Log("5");
+            
             _AnimationToSequence.Add(src, new SequenceInfo(src, src.sequence, src.Tweens, src.TweenDataList));
             DOTweenEditorPreview.PrepareTweenForPreview(s);
         }

@@ -27,14 +27,6 @@ namespace DG.DOTweenEditor
             BetweenCanvasGroupAndImage
         }
 
-        public SerializedProperty onStartProperty;
-        public SerializedProperty onPlayProperty;
-        public SerializedProperty onUpdateProperty;
-        public SerializedProperty onStepCompleteProperty;
-        public SerializedProperty onCompleteProperty;
-        public SerializedProperty onRewindProperty;
-        public SerializedProperty onTweenCreatedProperty;
-
         static readonly Dictionary<DOTweenAnimation.AnimationType, Type[]> _AnimationTypeToComponent =
             new Dictionary<DOTweenAnimation.AnimationType, Type[]>()
             {
@@ -199,14 +191,6 @@ namespace DG.DOTweenEditor
             src = target as DoSequenceAnimation;
             settings = DOTweenUtilityWindow.GetDOTweenSettings();
 
-            onStartProperty = base.serializedObject.FindProperty("onStart");
-            onPlayProperty = base.serializedObject.FindProperty("onPlay");
-            onUpdateProperty = base.serializedObject.FindProperty("onUpdate");
-            onStepCompleteProperty = base.serializedObject.FindProperty("onStepComplete");
-            onCompleteProperty = base.serializedObject.FindProperty("onComplete");
-            onRewindProperty = base.serializedObject.FindProperty("onRewind");
-            onTweenCreatedProperty = base.serializedObject.FindProperty("onTweenCreated");
-
             int len = _AnimationType.Length;
             _animationTypeNoSlashes = new string[len];
             for (int i = 0; i < len; ++i)
@@ -224,10 +208,11 @@ namespace DG.DOTweenEditor
 
         public override void OnInspectorGUI()
         {
-            DeGUI.BeginGUI((DeColorPalette)ABSAnimationInspector.colors, (DeStylePalette)ABSAnimationInspector.styles);
-
+            DeGUI.BeginGUI(ABSAnimationInspector.colors, ABSAnimationInspector.styles);
+            serializedObject.Update();
             DrawController();
             ChooseTarget();
+            serializedObject.ApplyModifiedProperties();
         }
 
         private void DrawController()
@@ -334,18 +319,24 @@ namespace DG.DOTweenEditor
         private void ChooseTarget()
         {
             bool isPreviewing = settings.showPreviewPanel ? DOTweenPreviewManager.PreviewGUI(src) : false;
-            
+
             EditorGUI.BeginDisabledGroup(isPreviewing);
             EditorGUILayout.BeginHorizontal();
             src.isActive =
                 EditorGUILayout.Toggle(new GUIContent("", "If unchecked, this animation will not be created"),
                     src.isActive, GUILayout.Width(14));
-            src.autoGenerate = DeGUILayout.ToggleButton(src.autoGenerate, new GUIContent("AutoGenerate", "If selected, the tween will be generated at startup (during Start for RectTransform position tween, Awake for all the others)"));
+            src.autoGenerate = DeGUILayout.ToggleButton(src.autoGenerate,
+                new GUIContent("AutoGenerate",
+                    "If selected, the tween will be generated at startup (during Start for RectTransform position tween, Awake for all the others)"));
             if (src.autoGenerate)
             {
-                src.autoPlay = DeGUILayout.ToggleButton(src.autoPlay, new GUIContent("AutoPlay", "If selected, the tween will play automatically"));
+                src.autoPlay = DeGUILayout.ToggleButton(src.autoPlay,
+                    new GUIContent("AutoPlay", "If selected, the tween will play automatically"));
             }
-            src.autoKill = DeGUILayout.ToggleButton(src.autoKill, new GUIContent("AutoKill", "If selected, the tween will be killed when it completes, and won't be reusable"));
+
+            src.autoKill = DeGUILayout.ToggleButton(src.autoKill,
+                new GUIContent("AutoKill",
+                    "If selected, the tween will be killed when it completes, and won't be reusable"));
 
             EditorGUILayout.EndHorizontal();
             for (int i = 0; i < src.TweenDataList.Count; i++)
@@ -356,7 +347,7 @@ namespace DG.DOTweenEditor
             }
 
             EditorGUI.EndDisabledGroup();
-            
+
             if (GUILayout.Button("Add Tween"))
             {
                 src.TweenDataList.Add(new TweenData());
@@ -719,18 +710,19 @@ namespace DG.DOTweenEditor
                 if (canBeRelative) tweenData.isRelative = EditorGUILayout.Toggle("    Relative", tweenData.isRelative);
 
                 // Events
-                AnimationEvents(this, tweenData);
+                var tweenDataIndex = tweenDataListProp.GetArrayElementAtIndex(index);
+                AnimationEvents(tweenDataIndex);
             }
         }
 
-        private DOTweenAnimation.AnimationType AnimationToDOTweenAnimationType(string animation)
+        private static DOTweenAnimation.AnimationType AnimationToDOTweenAnimationType(string animation)
         {
-            if (_datString == null) _datString = Enum.GetNames(typeof(DOTweenAnimation.AnimationType));
+            _datString ??= Enum.GetNames(typeof(DOTweenAnimation.AnimationType));
             animation = animation.Replace("/", "");
-            return (DOTweenAnimation.AnimationType)(Array.IndexOf(_datString, animation));
+            return (DOTweenAnimation.AnimationType)Array.IndexOf(_datString, animation);
         }
 
-        private int DOTweenAnimationTypeToPopupId(DOTweenAnimation.AnimationType animation)
+        private static int DOTweenAnimationTypeToPopupId(DOTweenAnimation.AnimationType animation)
         {
             return Array.IndexOf(_animationTypeNoSlashes, animation.ToString());
         }
@@ -857,60 +849,65 @@ namespace DG.DOTweenEditor
             return prevTotComponentsOnSrc != _totComponentsOnSrc;
         }
 
-        private void AnimationEvents(DoSequenceAnimationInspector inspector, TweenData tweenData)
+        private void AnimationEvents(SerializedProperty tweenDataProp)
         {
+            var hasOnStartProp = tweenDataProp.FindPropertyRelative("hasOnStart");
+            var hasOnPlayProp = tweenDataProp.FindPropertyRelative("hasOnPlay");
+            var hasOnUpdateProp = tweenDataProp.FindPropertyRelative("hasOnUpdate");
+            var hasOnStepCompleteProp = tweenDataProp.FindPropertyRelative("hasOnStepComplete");
+            var hasOnCompleteProp = tweenDataProp.FindPropertyRelative("hasOnComplete");
+            var hasOnRewindProp = tweenDataProp.FindPropertyRelative("hasOnRewind");
+            var hasOnTweenCreatedProp = tweenDataProp.FindPropertyRelative("hasOnTweenCreated");
+
             GUILayout.Space(6f);
             AnimationInspectorGUI.StickyTitle("Events");
             GUILayout.BeginHorizontal();
-            tweenData.hasOnStart = DeGUILayout.ToggleButton(tweenData.hasOnStart,
+            hasOnStartProp.boolValue = DeGUILayout.ToggleButton(hasOnStartProp.boolValue,
                 new GUIContent("OnStart", "Event called the first time the tween starts, after any eventual delay"),
                 ABSAnimationInspector.styles.button.tool);
-            tweenData.hasOnPlay = DeGUILayout.ToggleButton(tweenData.hasOnPlay,
+            hasOnPlayProp.boolValue = DeGUILayout.ToggleButton(hasOnPlayProp.boolValue,
                 new GUIContent("OnPlay",
                     "Event called each time the tween status changes from a pause to a play state (including the first time the tween starts playing), after any eventual delay"),
                 ABSAnimationInspector.styles.button.tool);
-            tweenData.hasOnUpdate = DeGUILayout.ToggleButton(tweenData.hasOnUpdate,
+            hasOnUpdateProp.boolValue = DeGUILayout.ToggleButton(hasOnUpdateProp.boolValue,
                 new GUIContent("OnUpdate", "Event called every frame while the tween is playing"),
                 ABSAnimationInspector.styles.button.tool);
             GUILayout.EndHorizontal();
             GUILayout.BeginHorizontal();
-            tweenData.hasOnStepComplete = DeGUILayout.ToggleButton(tweenData.hasOnStepComplete,
+            hasOnStepCompleteProp.boolValue = DeGUILayout.ToggleButton(hasOnStepCompleteProp.boolValue,
                 new GUIContent("OnStep", "Event called at the end of each loop cycle"),
                 ABSAnimationInspector.styles.button.tool);
-            tweenData.hasOnComplete = DeGUILayout.ToggleButton(tweenData.hasOnComplete,
+            hasOnCompleteProp.boolValue = DeGUILayout.ToggleButton(hasOnCompleteProp.boolValue,
                 new GUIContent("OnComplete", "Event called at the end of the tween, all loops included"),
                 ABSAnimationInspector.styles.button.tool);
-            tweenData.hasOnRewind = DeGUILayout.ToggleButton(tweenData.hasOnRewind,
+            hasOnRewindProp.boolValue = DeGUILayout.ToggleButton(hasOnRewindProp.boolValue,
                 new GUIContent("OnRewind",
                     "Event called when the tween is rewinded, either by playing it backwards until the end, or by rewinding it manually"),
                 ABSAnimationInspector.styles.button.tool);
-            tweenData.hasOnTweenCreated = DeGUILayout.ToggleButton(tweenData.hasOnTweenCreated,
+            hasOnTweenCreatedProp.boolValue = DeGUILayout.ToggleButton(hasOnTweenCreatedProp.boolValue,
                 new GUIContent("OnCreated", "Event called as soon as the tween is instantiated"),
                 ABSAnimationInspector.styles.button.tool);
             GUILayout.EndHorizontal();
-            if ((tweenData.hasOnStart || tweenData.hasOnPlay || tweenData.hasOnUpdate || tweenData.hasOnStepComplete ||
-                 tweenData.hasOnComplete ||
-                 tweenData.hasOnRewind
-                    ? 1
-                    : (tweenData.hasOnTweenCreated ? 1 : 0)) != 0)
+            
+            if (hasOnStartProp.boolValue || hasOnPlayProp.boolValue || hasOnUpdateProp.boolValue ||
+                hasOnStepCompleteProp.boolValue || hasOnCompleteProp.boolValue ||
+                hasOnRewindProp.boolValue || hasOnTweenCreatedProp.boolValue)
             {
-                inspector.serializedObject.Update();
                 DeGUILayout.BeginVBox(DeGUI.styles.box.stickyTop);
-                if (tweenData.hasOnStart)
-                    EditorGUILayout.PropertyField(inspector.onStartProperty);
-                if (tweenData.hasOnPlay)
-                    EditorGUILayout.PropertyField(inspector.onPlayProperty);
-                if (tweenData.hasOnUpdate)
-                    EditorGUILayout.PropertyField(inspector.onUpdateProperty);
-                if (tweenData.hasOnStepComplete)
-                    EditorGUILayout.PropertyField(inspector.onStepCompleteProperty);
-                if (tweenData.hasOnComplete)
-                    EditorGUILayout.PropertyField(inspector.onCompleteProperty);
-                if (tweenData.hasOnRewind)
-                    EditorGUILayout.PropertyField(inspector.onRewindProperty);
-                if (tweenData.hasOnTweenCreated)
-                    EditorGUILayout.PropertyField(inspector.onTweenCreatedProperty);
-                inspector.serializedObject.ApplyModifiedProperties();
+                if (hasOnStartProp.boolValue)
+                    EditorGUILayout.PropertyField(tweenDataProp.FindPropertyRelative("onStart"));
+                if (hasOnPlayProp.boolValue)
+                    EditorGUILayout.PropertyField(tweenDataProp.FindPropertyRelative("onPlay"));
+                if (hasOnUpdateProp.boolValue)
+                    EditorGUILayout.PropertyField(tweenDataProp.FindPropertyRelative("onUpdate"));
+                if (hasOnStepCompleteProp.boolValue)
+                    EditorGUILayout.PropertyField(tweenDataProp.FindPropertyRelative("onStepComplete"));
+                if (hasOnCompleteProp.boolValue)
+                    EditorGUILayout.PropertyField(tweenDataProp.FindPropertyRelative("onComplete"));
+                if (hasOnRewindProp.boolValue)
+                    EditorGUILayout.PropertyField(tweenDataProp.FindPropertyRelative("onRewind"));
+                if (hasOnTweenCreatedProp.boolValue)
+                    EditorGUILayout.PropertyField(tweenDataProp.FindPropertyRelative("onTweenCreated"));
                 DeGUILayout.EndVBox();
             }
             else

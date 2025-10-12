@@ -99,65 +99,67 @@ namespace DG.Tweening
             CreateTweenOrSequence();
         }
 
-        private void CreateTweenOrSequence()
+        private Tween CreateTweenOrSequence()
         {
-            if (!isActive || !autoGenerate) return;
+            if (!isActive || !autoGenerate) return null;
             if (tweenDataList.Count == 1)
             {
+                Debug.Log("tween");
                 tween = CreateTween(tweenDataList[0]);
-                tween.SetAutoKill(autoKill);
+                return tween.SetAutoKill(autoKill);
             }
-            else
+
+            Debug.Log("sequence");
+            tweens = new List<Tween>();
+            sequence = DOTween.Sequence().SetAutoKill(autoKill);
+            for (int i = 0; i < tweenDataList.Count; i++)
             {
-                tweens = new List<Tween>();
-                sequence = DOTween.Sequence().SetAutoKill(autoKill);
-                for (int i = 0; i < tweenDataList.Count; i++)
+                switch (tweenDataList[i].sequenceType)
                 {
-                    switch (tweenDataList[i].sequenceType)
-                    {
-                        case SequenceType.Append:
-                            var t = CreateTween(tweenDataList[i], false, autoPlay);
-                            tweens.Add(t);
-                            sequence.Append(t);
-                            break;
-                        case SequenceType.Prepend:
-                            var t1 = CreateTween(tweenDataList[i], false, autoPlay);
-                            tweens.Add(t1);
-                            sequence.Prepend(t1);
-                            break;
-                        case SequenceType.Join:
-                            var t2 = CreateTween(tweenDataList[i], false, autoPlay);
-                            tweens.Add(t2);
-                            sequence.Join(t2);
-                            break;
-                        case SequenceType.Insert:
-                            var t3 = CreateTween(tweenDataList[i], false, autoPlay);
-                            tweens.Add(t3);
-                            sequence.Insert(tweenDataList[i].atPosition, t3);
-                            break;
-                        case SequenceType.AppendInterval:
-                            sequence.AppendInterval(tweenDataList[i].interval);
-                            break;
-                        case SequenceType.PrependInterval:
-                            sequence.PrependInterval(tweenDataList[i].interval);
-                            break;
-                        case SequenceType.AppendCallback:
-                            sequence.AppendCallback(tweenDataList[i].callback);
-                            break;
-                        case SequenceType.PrependCallback:
-                            sequence.PrependCallback(tweenDataList[i].callback);
-                            break;
-                        case SequenceType.JoinCallback:
-                            sequence.JoinCallback(tweenDataList[i].callback);
-                            break;
-                        case SequenceType.InsertCallback:
-                            sequence.InsertCallback(tweenDataList[i].atPosition, tweenDataList[i].callback);
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
+                    case SequenceType.Append:
+                        var t = CreateTween(tweenDataList[i], false, autoPlay);
+                        tweens.Add(t);
+                        sequence.Append(t);
+                        break;
+                    case SequenceType.Prepend:
+                        var t1 = CreateTween(tweenDataList[i], false, autoPlay);
+                        tweens.Add(t1);
+                        sequence.Prepend(t1);
+                        break;
+                    case SequenceType.Join:
+                        var t2 = CreateTween(tweenDataList[i], false, autoPlay);
+                        tweens.Add(t2);
+                        sequence.Join(t2);
+                        break;
+                    case SequenceType.Insert:
+                        var t3 = CreateTween(tweenDataList[i], false, autoPlay);
+                        tweens.Add(t3);
+                        sequence.Insert(tweenDataList[i].atPosition, t3);
+                        break;
+                    case SequenceType.AppendInterval:
+                        sequence.AppendInterval(tweenDataList[i].interval);
+                        break;
+                    case SequenceType.PrependInterval:
+                        sequence.PrependInterval(tweenDataList[i].interval);
+                        break;
+                    case SequenceType.AppendCallback:
+                        sequence.AppendCallback(tweenDataList[i].callback);
+                        break;
+                    case SequenceType.PrependCallback:
+                        sequence.PrependCallback(tweenDataList[i].callback);
+                        break;
+                    case SequenceType.JoinCallback:
+                        sequence.JoinCallback(tweenDataList[i].callback);
+                        break;
+                    case SequenceType.InsertCallback:
+                        sequence.InsertCallback(tweenDataList[i].atPosition, tweenDataList[i].callback);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
             }
+
+            return sequence;
         }
 
         private Tween CreateTween(TweenData tweenData, bool regenerateIfExists = false, bool andPlay = true)
@@ -632,11 +634,10 @@ namespace DG.Tweening
             return tween;
         }
 
-        public Sequence CreateEditorPreview()
+        public Tween CreateEditorPreview()
         {
             if (Application.isPlaying) return null;
-            CreateTweenOrSequence();
-            return sequence;
+            return CreateTweenOrSequence();
         }
 
         private GameObject GetTweenGO(TweenData tweenData)

@@ -1,0 +1,279 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7231513ca539c477bbd321bfb398bd35, type: 3}
+  m_Name: PetSpriteDataSO
+  m_EditorClassIdentifier: Assembly-CSharp::PetSpriteDataSO
+  elementPetSprites:
+  - elementType: 0
+    pets:
+    - petName: Pet_0
+      sprites:
+      - {fileID: 21300000, guid: ce006da9337354ef49358fdfa491daa4, type: 3}
+      - {fileID: 21300000, guid: 8401da8ecd7cd4cb8b55ea3fe882b574, type: 3}
+      - {fileID: 21300000, guid: aad9aeaf9a38c499b9df83b4f596ff89, type: 3}
+      - {fileID: 21300000, guid: f467d757a9a134119834801eeae97f9b, type: 3}
+      - {fileID: 21300000, guid: 38fb134ea57834029aea7a8229e9fc52, type: 3}
+    - petName: Pet_1
+      sprites:
+      - {fileID: 21300000, guid: 7c09ac541a2e3418f86b27ac0d3ad104, type: 3}
+      - {fileID: 21300000, guid: 8f3ac230fa15d44f099895564399e041, type: 3}
+      - {fileID: 21300000, guid: e6b9e82839040495d818f2227d1276ad, type: 3}
+      - {fileID: 21300000, guid: 018d94ca6c1c14254b17262e80c198c6, type: 3}
+      - {fileID: 21300000, guid: a0fd8f4c77ebe4493b7595169366ce88, type: 3}
+    - petName: Pet_2
+      sprites:
+      - {fileID: 21300000, guid: 541dba40b39624793ae629e1651c7874, type: 3}
+      - {fileID: 21300000, guid: 8f18f396c3fb943b8a40727a0f97be5c, type: 3}
+      - {fileID: 21300000, guid: 3802c32e5ccc64381bdc3cae198652b9, type: 3}
+      - {fileID: 21300000, guid: 26e78845f23fd409d981da6d0b8cf06b, type: 3}
+      - {fileID: 21300000, guid: 5d739950ad56e4f5890e40c7bd887cbe, type: 3}
+    - petName: Pet_3
+      sprites:
+      - {fileID: 21300000, guid: f9d5bbd13e6d24668bcbbdd6263ab43b, type: 3}
+      - {fileID: 21300000, guid: 766c7e5622445483583a3ede1b1d0c02, type: 3}
+      - {fileID: 21300000, guid: 83c71e070e89d464f9b6aea34b650281, type: 3}
+      - {fileID: 21300000, guid: 720ab2e7b4730468d9e5d161e4234d43, type: 3}
+      - {fileID: 21300000, guid: 1e64519d2e93e4abab7bd5f50827eeaf, type: 3}
+    - petName: Pet_4
+      sprites:
+      - {fileID: 21300000, guid: 3849c28e8925c41aabc974bc00e3a03d, type: 3}
+      - {fileID: 21300000, guid: 905793c19168b41feb17acfcbd245dce, type: 3}
+      - {fileID: 21300000, guid: dc87e9b36ee4c464db4abd3c821565ba, type: 3}
+      - {fileID: 21300000, guid: f57a536f52475470bb1bd579a3b72e90, type: 3}
+      - {fileID: 21300000, guid: b173f30d59b8749c1a21408cffb0822d, type: 3}
+    - petName: Pet_5
+      sprites:
+      - {fileID: 21300000, guid: b2bd767c123734e85a8a4b58b5b70e52, type: 3}
+      - {fileID: 21300000, guid: 4eb8fbf2be0874572b3069be565cdea8, type: 3}
+      - {fileID: 21300000, guid: e8bffe20313cd453a8264fd998ddd516, type: 3}
+      - {fileID: 21300000, guid: 1857ae403f7f54fd0bd947b81ddf3879, type: 3}
+      - {fileID: 21300000, guid: cdb7fbc46aa0a410db7f953703aa6194, type: 3}
+  - elementType: 1
+    pets:
+    - petName: Pet_6
+      sprites:
+      - {fileID: 21300000, guid: ce0f95514fc574b4c83f11b3516fd440, type: 3}
+      - {fileID: 21300000, guid: 5698b9463bada4b2ba5fc789d32ea733, type: 3}
+      - {fileID: 21300000, guid: 9b4ff065a4cd04336935c37ff0a36336, type: 3}
+      - {fileID: 21300000, guid: 0c1ffa7d24fbb468781c1c97d3239b56, type: 3}
+      - {fileID: 21300000, guid: 1f3f7efad30a64fc6a11651ae2c92c04, type: 3}
+    - petName: Pet_7
+      sprites:
+      - {fileID: 21300000, guid: 5bd88d2188713490883add1138d79ce0, type: 3}
+      - {fileID: 21300000, guid: b49095aff3e464233b448c7d0ca07f36, type: 3}
+      - {fileID: 21300000, guid: d98b430b13ace4121b010566a5d021fe, type: 3}
+      - {fileID: 21300000, guid: 94c77889d006948879d90fdc32683230, type: 3}
+      - {fileID: 21300000, guid: d4bf32d135ca64cbd9ebf866140e337b, type: 3}
+    - petName: Pet_8
+      sprites:
+      - {fileID: 21300000, guid: 2c31e8c8ed4964a4b8be52ca9df5190d, type: 3}
+      - {fileID: 21300000, guid: 861fae870075e4a5b899be3e80507d71, type: 3}
+      - {fileID: 21300000, guid: 5c2608cad9ccb4003ba268fb91e130a2, type: 3}
+      - {fileID: 21300000, guid: bf2fb80ec237345868785dcb8b56488f, type: 3}
+      - {fileID: 21300000, guid: 08b64afe1c5c94ba581bc47a5097d27a, type: 3}
+    - petName: Pet_9
+      sprites:
+      - {fileID: 21300000, guid: b6dfabd0111814e13940781026ee841c, type: 3}
+      - {fileID: 21300000, guid: 055a8cb88fa52454a92c7ddd79778463, type: 3}
+      - {fileID: 21300000, guid: 37819e3d058a84ce58cba35540a8e8b0, type: 3}
+      - {fileID: 21300000, guid: 3ae6f3bd0ee0b4bf5a372d77c781eef1, type: 3}
+      - {fileID: 21300000, guid: a7e085d16c5504f2f83f02801b821682, type: 3}
+    - petName: Pet_10
+      sprites:
+      - {fileID: 21300000, guid: f4f44c772939745e9a86ac3196b49ca7, type: 3}
+      - {fileID: 21300000, guid: 771cce1df0b8342019454ce0580a4024, type: 3}
+      - {fileID: 21300000, guid: ff012e14b9f0d4fbea08a8b6794132e5, type: 3}
+      - {fileID: 21300000, guid: 33325eab7e4de4ca4bae70efdeeca394, type: 3}
+      - {fileID: 21300000, guid: 20f630487ee604e07aac11f7c7888048, type: 3}
+    - petName: Pet_11
+      sprites:
+      - {fileID: 21300000, guid: df506dabdd67842e690df7f75d358b4e, type: 3}
+      - {fileID: 21300000, guid: 849b49573aad74a36b41bb75437d6430, type: 3}
+      - {fileID: 21300000, guid: 988cdc79d0b344a63a375081e5197e90, type: 3}
+      - {fileID: 21300000, guid: 1f1756a0d37c548c5a906818db2e4288, type: 3}
+      - {fileID: 21300000, guid: 9a2797a8c2dec41d0a4f91da1559e4f7, type: 3}
+  - elementType: 2
+    pets:
+    - petName: Pet_12
+      sprites:
+      - {fileID: 21300000, guid: 918e9dd7d2e7e492094a842f87d4497c, type: 3}
+      - {fileID: 21300000, guid: 513e4860020de4b78a1b7e490461c4af, type: 3}
+      - {fileID: 21300000, guid: 8a1e5fb95f5b844f5b6ee99b9dc2e838, type: 3}
+      - {fileID: 21300000, guid: 04c520fee4578477fb40631cbba17aa3, type: 3}
+      - {fileID: 21300000, guid: b0b0c6823127f45f6a83d499c3a957da, type: 3}
+    - petName: Pet_13
+      sprites:
+      - {fileID: 21300000, guid: b03f418e37a7541c3a761b60db91bee9, type: 3}
+      - {fileID: 21300000, guid: 47ff1cf33498d45d99ac3279dbd5654a, type: 3}
+      - {fileID: 21300000, guid: b906baecc6a0541de94ee35363b4b4f6, type: 3}
+      - {fileID: 21300000, guid: c2366f167f40c4b13b70c6b6c7c218d6, type: 3}
+      - {fileID: 21300000, guid: e81d1c05b4b4945f486cb59979334dc2, type: 3}
+    - petName: Pet_14
+      sprites:
+      - {fileID: 21300000, guid: ecfaee2c08a4f4188bb22097d5f84c6f, type: 3}
+      - {fileID: 21300000, guid: 6603f55ba8540456f9ba8cbca3f48e89, type: 3}
+      - {fileID: 21300000, guid: 4ff2c8150a38941eb961005d6bd23ac8, type: 3}
+      - {fileID: 21300000, guid: c04db92fcffa64a409ff034fafa1d1c0, type: 3}
+      - {fileID: 21300000, guid: ae493bff0ab2f4335861f0bd19d0c88c, type: 3}
+    - petName: Pet_15
+      sprites:
+      - {fileID: 21300000, guid: a97bed898846b4890a758f8bebe85ea4, type: 3}
+      - {fileID: 21300000, guid: ffb7b583540d44f708ee55267267cd7f, type: 3}
+      - {fileID: 21300000, guid: b5881db51d3ac4eefab09b46aec9b8fd, type: 3}
+      - {fileID: 21300000, guid: 3fdef105c554c45698034219e6f79390, type: 3}
+      - {fileID: 21300000, guid: 0becae49e755c4b08884f68d7568c00c, type: 3}
+    - petName: Pet_16
+      sprites:
+      - {fileID: 21300000, guid: 9a5511561dd3e448ab36fa7985ddd869, type: 3}
+      - {fileID: 21300000, guid: e31d7c88ceca3492f83cf3929ddf1a46, type: 3}
+      - {fileID: 21300000, guid: 32fbb013116964b1fa297aa68e75e907, type: 3}
+      - {fileID: 21300000, guid: 4691489ad0a834f71bc677c28009f6c0, type: 3}
+      - {fileID: 21300000, guid: 548224872952f4472b5e46e18561a966, type: 3}
+    - petName: Pet_17
+      sprites:
+      - {fileID: 21300000, guid: e395d675fe150470ab46e9db969b6b80, type: 3}
+      - {fileID: 21300000, guid: f9e2d92eaff1f4342960c3344c3cbefc, type: 3}
+      - {fileID: 21300000, guid: 6d7382bae2cd84c5da030714b55f3ffb, type: 3}
+      - {fileID: 21300000, guid: 894cf9bbfe93e4c7dacd4ca0fc234f11, type: 3}
+      - {fileID: 21300000, guid: 30f72735db00a4d5ea56db44a48ec627, type: 3}
+  - elementType: 3
+    pets:
+    - petName: Pet_18
+      sprites:
+      - {fileID: 21300000, guid: 142c498e3f5aa4063ada9756127649aa, type: 3}
+      - {fileID: 21300000, guid: 129b821bcde4a4ce8b11193ccbfaf792, type: 3}
+      - {fileID: 21300000, guid: 54c2b3caa3c52497790925955aab1e14, type: 3}
+      - {fileID: 21300000, guid: 5cd9c3c6daa904ea284cbec028096715, type: 3}
+      - {fileID: 21300000, guid: 24475e509fe9b443890af6aa6ef7da18, type: 3}
+    - petName: Pet_19
+      sprites:
+      - {fileID: 21300000, guid: 30418ae9a31644f2fa017c8629678970, type: 3}
+      - {fileID: 21300000, guid: 532824e75f2c0404b84781ed362fb5e4, type: 3}
+      - {fileID: 21300000, guid: 5e20004c513df485e8c8ce80c494683e, type: 3}
+      - {fileID: 21300000, guid: 93e7c7edaa88d4507a4d2181ac012597, type: 3}
+      - {fileID: 21300000, guid: 3417101ee03c24bd4820f74c887ae6f0, type: 3}
+    - petName: Pet_20
+      sprites:
+      - {fileID: 21300000, guid: 6bd4b2608f34c4834b4eeb16bd2cdb29, type: 3}
+      - {fileID: 21300000, guid: e91754d3b7bf24500a662f0c22576603, type: 3}
+      - {fileID: 21300000, guid: 9ff4facac21ce47f182a86d8a79a1c48, type: 3}
+      - {fileID: 21300000, guid: 0b5d14bf162f2461f9d3971ced142923, type: 3}
+      - {fileID: 21300000, guid: 02fe6fad4502b409c871dd384be9f553, type: 3}
+    - petName: Pet_21
+      sprites:
+      - {fileID: 21300000, guid: 2b7bd7d9cc79a465ca67d146bd1ab4e2, type: 3}
+      - {fileID: 21300000, guid: 7b3338a58ee644239b6fa0296760cf17, type: 3}
+      - {fileID: 21300000, guid: 2d6ae2cb84f9e4d5eb3d87fe257b378a, type: 3}
+      - {fileID: 21300000, guid: 36182b9859997424e86c1d95497a1a69, type: 3}
+      - {fileID: 21300000, guid: 91df3705553ec4d24bec9ba161c711d8, type: 3}
+    - petName: Pet_22
+      sprites:
+      - {fileID: 21300000, guid: 0681dee8a80dd4cff8130325e1757813, type: 3}
+      - {fileID: 21300000, guid: e83e582d778bf4502b7ca3abdd291d49, type: 3}
+      - {fileID: 21300000, guid: 2d2dad188f6b945128121554a153e07a, type: 3}
+      - {fileID: 21300000, guid: ae62574b5b0e24ac1a284d77089395bc, type: 3}
+      - {fileID: 21300000, guid: 53fd78f09615844d2b825fbd284d0113, type: 3}
+    - petName: Pet_23
+      sprites:
+      - {fileID: 21300000, guid: dfdeb6b3263704aa098681de97799d57, type: 3}
+      - {fileID: 21300000, guid: 5be7dae305df24ecd8a38c76a1a205b7, type: 3}
+      - {fileID: 21300000, guid: 21ee6c077896645daa57269d54549bf6, type: 3}
+      - {fileID: 21300000, guid: 5ed072443683542d89a1c59cdfd3c313, type: 3}
+      - {fileID: 21300000, guid: 259ac445bfc1c4692a21397745e6cb44, type: 3}
+  - elementType: 4
+    pets:
+    - petName: Pet_24
+      sprites:
+      - {fileID: 21300000, guid: 05cef3dae11be42ad947a4878f05aecc, type: 3}
+      - {fileID: 21300000, guid: 01f9bdf97e45a4367b8e3d290133924b, type: 3}
+      - {fileID: 21300000, guid: 214e2ce78dae94cf1afe6fe783e994cd, type: 3}
+      - {fileID: 21300000, guid: f2efc3b829dc0453ba55820fc900170a, type: 3}
+      - {fileID: 21300000, guid: 433fe44006f4942f594ff1b82e4fb9a0, type: 3}
+    - petName: Pet_25
+      sprites:
+      - {fileID: 21300000, guid: 770640bf2a6bc4955860e7886e773e02, type: 3}
+      - {fileID: 21300000, guid: d3a4deb6fc2094337ba57b4d57814b3d, type: 3}
+      - {fileID: 21300000, guid: 8c4f4e98e1178491898d9253bc0013ee, type: 3}
+      - {fileID: 21300000, guid: b0126049c96d14f0ca8c3d24a54a53a6, type: 3}
+      - {fileID: 21300000, guid: d8e28f84b596148db889e3afae491379, type: 3}
+    - petName: Pet_26
+      sprites:
+      - {fileID: 21300000, guid: 5fdbb4249c5564a8882ede9e5161473a, type: 3}
+      - {fileID: 21300000, guid: 8377aedcecde2477ebc8d4b41175625b, type: 3}
+      - {fileID: 21300000, guid: a827746592f1b45458b080649153690b, type: 3}
+      - {fileID: 21300000, guid: 21fdfd2e52b284f10a17039ec1e5940a, type: 3}
+      - {fileID: 21300000, guid: d053a2db74392481a81babb1dc7fc347, type: 3}
+    - petName: Pet_27
+      sprites:
+      - {fileID: 21300000, guid: 2f8399c242ae74c5a94d9e978f9d47c9, type: 3}
+      - {fileID: 21300000, guid: 2d9106b85186948b3b177185d39e1f86, type: 3}
+      - {fileID: 21300000, guid: 6ea2664bf88524758a022c990c35e88f, type: 3}
+      - {fileID: 21300000, guid: b66774ae1c8e64cee97b66a17e50a6da, type: 3}
+      - {fileID: 21300000, guid: c28e91eb0399640f9b689b3e1dd37766, type: 3}
+    - petName: Pet_28
+      sprites:
+      - {fileID: 21300000, guid: 5cb93ae4bd5254abdb91170c05512950, type: 3}
+      - {fileID: 21300000, guid: b29dde2f334774eacb6d8ce6a836adfb, type: 3}
+      - {fileID: 21300000, guid: 738a151410fe148758201a44b18e5307, type: 3}
+      - {fileID: 21300000, guid: c4d5890155d46429cab644be1c7dd894, type: 3}
+      - {fileID: 21300000, guid: 6613d8414f81340bc92bbd503ae565ef, type: 3}
+    - petName: Pet_29
+      sprites:
+      - {fileID: 21300000, guid: ca99f5619cdf64f26adbe9af22205f7a, type: 3}
+      - {fileID: 21300000, guid: 1b14ebb51dc9d4b3dbd0cabccef9087a, type: 3}
+      - {fileID: 21300000, guid: e78359522d878436087c224c86db4a8f, type: 3}
+      - {fileID: 21300000, guid: a1dd10ef9184c4126a64c64d1e7cb2f8, type: 3}
+      - {fileID: 21300000, guid: c9d8c8ec6071041aeb7c6e0a7fd1278a, type: 3}
+  - elementType: 5
+    pets:
+    - petName: Pet_30
+      sprites:
+      - {fileID: 21300000, guid: 24f668a0716c84cb08667e86a23fbb62, type: 3}
+      - {fileID: 21300000, guid: 6772a47c0dd4d4c089b1e49798616f80, type: 3}
+      - {fileID: 21300000, guid: f970fa43d689a48c9be4849333574ddd, type: 3}
+      - {fileID: 21300000, guid: ed8a0fe551cf4426abd2137370bafe7e, type: 3}
+      - {fileID: 21300000, guid: 4bee02927946344418a35c2b42c9d424, type: 3}
+    - petName: Pet_31
+      sprites:
+      - {fileID: 21300000, guid: 3147c99672e654dce89e0dc4c96ed355, type: 3}
+      - {fileID: 21300000, guid: a899bf505cbad42fd81f8143f9a08a54, type: 3}
+      - {fileID: 21300000, guid: 9d60986f653ff4221ba398eb2101d81b, type: 3}
+      - {fileID: 21300000, guid: ecd710bff400643228fdc4498b9bc0d6, type: 3}
+      - {fileID: 21300000, guid: 019b9ba71527e4a2bbf9e149fb9089f5, type: 3}
+    - petName: Pet_32
+      sprites:
+      - {fileID: 21300000, guid: 245ad0c92cc6c4689bb12a944edc804b, type: 3}
+      - {fileID: 21300000, guid: 7514cfd7150264e3cb88368c2874224d, type: 3}
+      - {fileID: 21300000, guid: 92b6e04a67fe748ba8298dc3c0f8851d, type: 3}
+      - {fileID: 21300000, guid: 747df1927d05845d1af59742b77a28c9, type: 3}
+      - {fileID: 21300000, guid: 6c6f9ed9981cb45179b7143ce32f4fa3, type: 3}
+    - petName: Pet_33
+      sprites:
+      - {fileID: 21300000, guid: de1520d884d934e74b100513ad3b6c8b, type: 3}
+      - {fileID: 21300000, guid: ac60542ae6ec340f08f2aa09349d6c19, type: 3}
+      - {fileID: 21300000, guid: f0d7ec5cddcc74eefb4f9ca25713891d, type: 3}
+      - {fileID: 21300000, guid: f97977b96c7964d40a979acb6986d747, type: 3}
+      - {fileID: 21300000, guid: b119c2b9cf768453cbe3d48296dcd000, type: 3}
+    - petName: Pet_34
+      sprites:
+      - {fileID: 21300000, guid: e1523ed20a60b4561a9f7a55210ddac6, type: 3}
+      - {fileID: 21300000, guid: 2cfd6fd3e2cbd49bdb219cc07bc1f181, type: 3}
+      - {fileID: 21300000, guid: 7bf0a87aca25a4a6da30da0e88c3cf8a, type: 3}
+      - {fileID: 21300000, guid: 82bd3393298f743b18af486747272544, type: 3}
+      - {fileID: 21300000, guid: fe0458ba1246446299dc5d6bf9a95c35, type: 3}
+    - petName: Pet_35
+      sprites:
+      - {fileID: 21300000, guid: cbf1732a0fa494947a77ca78529f6afa, type: 3}
+      - {fileID: 21300000, guid: 0f8203e2c01ba4140845d8da8ede2587, type: 3}
+      - {fileID: 21300000, guid: d7424f0216b59440ba516ff2c4e16cf3, type: 3}
+      - {fileID: 21300000, guid: 2be4c329366b04c088cff4110a8920e1, type: 3}
+      - {fileID: 21300000, guid: 503d3c2aa6d8f4f9982877c6cc595441, type: 3}
